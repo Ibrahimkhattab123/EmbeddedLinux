@@ -15,7 +15,6 @@ enum class LogLevel { TRACE, DEBUG, INFO, NOTICE, WARNING, ERROR, FATAL };
 struct LogEntry {
   LogLevel level;
   std::string message;
-  
 
   LogEntry(LogLevel level, const std::string &message);
 };
@@ -34,11 +33,10 @@ private:
   std::vector<LogEntry>
       logs; // to store the enteries for debugging or reports and so on
 
-  std::string  logLevelToString(logger::LogLevel level);
-  std::string  logLevelToColour(logger::LogLevel level);
+  std::string logLevelToString(logger::LogLevel level);
+  std::string logLevelToColour(logger::LogLevel level);
 
   std::string levelStr = "";
   std::string colorCode = "";
-
 };
 } // namespace logger

@@ -3,7 +3,7 @@
 // creates an instance of BacktraceTracker with the unique variable name and the
 // current function's name (__PRETTY_FUNCTION__).
 //#define TRACE_FUNCTION(backtrace) BacktraceTracker
-//trace_##__COUNTER__(backtrace, __PRETTY_FUNCTION__)
+// trace_##__COUNTER__(backtrace, __PRETTY_FUNCTION__)
 #define TRACE_FUNCTION(backtrace)                                              \
   BacktraceTracker tracker(backtrace, __PRETTY_FUNCTION__);
 

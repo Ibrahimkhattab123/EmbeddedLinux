@@ -5,7 +5,7 @@ std::stringstream logger::getCurrentTime() {
   std::time_t currentTime = std::chrono::system_clock::to_time_t(now);
 
   struct std::tm timeInfo;
-  gmtime_r(&currentTime, &timeInfo);   // thread safe function 
+  gmtime_r(&currentTime, &timeInfo); // thread safe function
 
   auto milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(
                           now.time_since_epoch()) %
@@ -31,7 +31,7 @@ std::string logger::Logger::logLevelToString(logger::LogLevel level) {
     return "TRACE";
   case LogLevel::DEBUG:
     return "DEBUG";
-  case LogLevel::INFO:   
+  case LogLevel::INFO:
     return "INFO";
   case LogLevel::NOTICE:
     return "NOTICE";
@@ -44,9 +44,7 @@ std::string logger::Logger::logLevelToString(logger::LogLevel level) {
   default:
     return "UNOKWN";
   }
-
 }
-
 
 std::string logger::Logger::logLevelToColour(logger::LogLevel level) {
 
@@ -54,36 +52,32 @@ std::string logger::Logger::logLevelToColour(logger::LogLevel level) {
   case LogLevel::TRACE:
     return "\x1B[0m"; // Default colour
   case LogLevel::DEBUG:
-    return "\x1B[0m";  
-  case LogLevel::INFO:   
-    return "\x1B[0m";  
+    return "\x1B[0m";
+  case LogLevel::INFO:
+    return "\x1B[0m";
   case LogLevel::NOTICE:
     return "\x1B[34m"; // blue
   case LogLevel::WARNING:
-    return "\x1B[34m"; 
+    return "\x1B[34m";
   case LogLevel::ERROR:
-    return "\x1B[31m"; // red 
+    return "\x1B[31m"; // red
   case LogLevel::FATAL:
     return "\x1B[31m";
   default:
     return "UNOKWN";
   }
 }
-namespace logger
-{
-  void Logger::dump()
-  {
-    // Print log with color as [LogLevel] message
-    // ANSI escape sequences
-    for (const auto& entry: logs){
-      std::cout << getCurrentTime().str()  << " : [" << logLevelToColour(entry.level) << logLevelToString(entry.level)
-            << "\x1B[0m] " << logLevelToColour(entry.level)  << entry.message << "\x1B[0m] "
-            << std::endl;
-    }
-  }
-  
-  void Logger::clear()
-  {
-    logs.clear();
+namespace logger {
+void Logger::dump() {
+  // Print log with color as [LogLevel] message
+  // ANSI escape sequences
+  for (const auto &entry : logs) {
+    std::cout << getCurrentTime().str() << " : ["
+              << logLevelToColour(entry.level) << logLevelToString(entry.level)
+              << "\x1B[0m] " << logLevelToColour(entry.level) << entry.message
+              << "\x1B[0m] " << std::endl;
   }
 }
+
+void Logger::clear() { logs.clear(); }
+} // namespace logger

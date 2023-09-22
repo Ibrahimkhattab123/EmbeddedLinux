@@ -4,13 +4,44 @@ import requests
 
 def suggest_activity():
     activities = [
-        {"activity": "Have a photo session with some friends", "type": "social", "participants": 4, "price": 0.05, "link": "", "key": "3305912", "accessibility": 0.8},
-        {"activity": "Go for a hike in a nearby park", "type": "outdoor", "participants": 2, "price": 0, "link": "", "key": "1234567", "accessibility": 0.5},
-        {"activity": "Read a book you've been wanting to start", "type": "indoor", "participants": 1, "price": 0, "link": "", "key": "9876543", "accessibility": 0.2},
-        {"activity": "Cook a new recipe for dinner", "type": "culinary", "participants": 2, "price": 0.2, "link": "", "key": "4567890", "accessibility": 0.6},
-
+        {
+            "activity": "Have a photo session with some friends",
+            "type": "social",
+            "participants": 4,
+            "price": 0.05,
+            "link": "",
+            "key": "3305912",
+            "accessibility": 0.8,
+        },
+        {
+            "activity": "Go for a hike in a nearby park",
+            "type": "outdoor",
+            "participants": 2,
+            "price": 0,
+            "link": "",
+            "key": "1234567",
+            "accessibility": 0.5,
+        },
+        {
+            "activity": "Read a book you've been wanting to start",
+            "type": "indoor",
+            "participants": 1,
+            "price": 0,
+            "link": "",
+            "key": "9876543",
+            "accessibility": 0.2,
+        },
+        {
+            "activity": "Cook a new recipe for dinner",
+            "type": "culinary",
+            "participants": 2,
+            "price": 0.2,
+            "link": "",
+            "key": "4567890",
+            "accessibility": 0.6,
+        },
     ]
-    
+
     suggestion = random.choice(activities)
     return suggestion
 
@@ -33,9 +64,10 @@ def main():
 
     print("Activity Suggestion:")
     print(activity_suggestion)
-    
+
     print("\nYour Public IP Address:")
     print(public_ip)
+
 
 if __name__ == "__main__":
     main()
