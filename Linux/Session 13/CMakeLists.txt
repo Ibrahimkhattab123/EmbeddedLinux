@@ -10,3 +10,5 @@ add_subdirectory(myLib)
 
 add_executable(myapp main.cpp)
 target_link_libraries(myapp mylib)
+
+target_include_directories(myapp PRIVATE mylib)
