@@ -1,4 +1,4 @@
 **/*.out
 Session 5/venv/
 build/
-C++/Session 10/Uart_debuger/build/
+.cache/
