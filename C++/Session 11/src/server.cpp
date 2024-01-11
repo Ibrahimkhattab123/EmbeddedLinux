@@ -1,5 +1,5 @@
-#include "include/server.hpp"
-#include "include/client_handler.hpp"
+#include "../include/client_handler.hpp"
+#include "../include/server.hpp"
 #include <cstring>
 
 Server::Server(int _port) : port(_port) {

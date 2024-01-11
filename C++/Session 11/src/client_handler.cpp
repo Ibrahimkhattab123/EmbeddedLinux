@@ -1,4 +1,4 @@
-#include "include/client_handler.hpp"
+#include "../include/client_handler.hpp"
 
 
 CommandHandler::CommandHandler(std::string _clientCommand) : clientCommand(_clientCommand) {}
